@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { formatDate } from "@/lib/utils";
-import { EyeIcon, Link } from "lucide-react";
+import { EyeIcon } from "lucide-react";
 import React from "react";
 import { Button } from "./ui/button";
 
@@ -35,7 +36,11 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
       </div>
       <Link href={`/startup/${post._id}`}>
         <p className="startup-card_desc">{post?.description}</p>
-        <img src={image} alt="placeholder" className="startup-card_img" />
+        <img
+          src="/download.jpg"
+          alt="placeholder"
+          className="startup-card_img"
+        />
         <div className="flex-between gap-3 mt-5">
           <Link href={`/?query=${post?.category.toLowerCase()}`}>
             <p className="text-16-medium">{post?.category}</p>
